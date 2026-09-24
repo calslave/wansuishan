@@ -31,6 +31,20 @@ npm run lint
 
 构建产物位于 `dist/`。
 
+## GitHub Pages 部署
+
+仓库：`calslave/wansuishan`，部署分支：`master`。
+
+首次部署前，在仓库 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**。如果账户套餐不支持私有仓库 Pages，需要先确认托管方案；不要直接把仓库改为公开。
+
+推送到 `master` 后，`.github/workflows/deploy.yml` 会自动安装依赖、构建并发布 `dist/`。也可在 **Actions → Deploy GitHub Pages → Run workflow** 手动触发；首次运行因 Pages 未开启而失败时，开启后重新运行即可。
+
+发布成功后的地址：<https://calslave.github.io/wansuishan/>。
+
+Vite 的 `base` 已设为 `/wansuishan/`，本地调试也使用这个路径，例如 `http://localhost:4173/wansuishan/`（实际端口以启动输出为准）。
+
+地图与字体依赖外部网络服务；出发清单状态保存在访问者自己的浏览器中。
+
 ## 信息更新提示
 
 页面按 2026 年 9 月 18 日的规划状态制作。出发前仍需复核开封国庆免费换乘停车场、万岁山多日票与演出预约规则、开封博物馆开放安排、G45/G1811 实时路况以及逐小时天气。
